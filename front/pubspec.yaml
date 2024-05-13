@@ -1,8 +1,8 @@
 name: capstone
-description: "A new Flutter project."
+description: A new Flutter project.
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to: none # Remove this line if you wish to publish to pub.dev
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
@@ -31,11 +31,30 @@ dependencies:
   flutter:
     sdk: flutter
 
-
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   get: ^4.6.5
+  cloud_firestore: ^4.15.8
+  flutter_dotenv:
+  firebase_auth:
+  firebase_core: ^2.27.0
+  audioplayers:
+  permission_handler:
+  record:
+  firebase_messaging: ^14.7.19
+  flutter_local_notifications: ^17.1.1
+  path_provider: ^2.1.3
+  flutter_animation_progress_bar: ^2.3.1
+  firebase_storage:
+  carousel_slider: ^4.2.1
+  dots_indicator: ^3.0.0
+  multiple_stream_builder: ^3.0.2
+  fl_chart: ^0.67.0
+  http: ^1.2.0
+  google_sign_in: ^6.2.1
+  flutter_svg: ^2.0.10+1
+  flutter_native_splash:
 
 dev_dependencies:
   flutter_test:
@@ -47,6 +66,26 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
+  flutter_launcher_icons: ^0.13.1
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/app_icon.png"
+  min_sdk_android: 21
+  remove_alpha_ios: true
+
+flutter_native_splash:
+  color: "#1F2544"
+  image: assets/images/splash_default.png
+
+  android_12:
+    color: "#1F2544"
+    image: assets/images/splash_android12.png
+  
+  android: true
+  ios: true
+  fullscreen: true
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -60,9 +99,11 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
-  #   - images/a_dot_ham.jpeg
+  assets:
+    - .env
+    - assets/images/authentication/
+    - assets/images/characters/
+    - assets/wavs/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
@@ -75,17 +116,15 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
-  #         style: italic
-  #   - family: Trajan Pro
-  #     fonts:
-  #       - asset: fonts/TrajanPro.ttf
-  #       - asset: fonts/TrajanPro_Bold.ttf
-  #         weight: 700
+  fonts:
+    - family: KoddiUDOnGothic
+      fonts:
+        - asset: assets/fonts/KoddiUDOnGothic-Regular.otf
+          weight: 300
+        - asset: assets/fonts/KoddiUDOnGothic-Bold.otf
+          weight: 500
+        - asset: assets/fonts/KoddiUDOnGothic-ExtraBold.otf
+          weight: 800
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
